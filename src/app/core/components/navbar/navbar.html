@@ -1,0 +1,26 @@
+<nav class="nav">
+    <img class="nav__logo" src="" alt="">
+    @if (!isMobile) {
+        <div class="nav__items">
+            <button class="nav__scrollButton" (click)="scrollTo('home')">Home</button>
+            <button class="nav__scrollButton" (click)="scrollTo('about')">Sobre nós</button>
+            <button class="nav__scrollButton" (click)="scrollTo('contact')">Contato</button>
+        </div>
+    } @else {
+        <div class="nav__menu-button" (click)="openMenu()" [class.nav__hidden]="isMenuOpen">
+            <span class="nav__menu-icon"></span>
+            <span class="nav__menuIcon"></span>
+            <span class="nav__menuIcon"></span>
+        </div>
+
+        @if (isMenuOpen) {
+            <ng-container>
+                <div class="nav__menu-list">
+                    @for (section of menuItems; track $index) {
+                        <button class="nav__menu-item font-hat-text font-14 font-semibold" (click)="scrollTo(section.value); openMenu()">{{ section.label }}</button>
+                    }
+                </div>
+            </ng-container>
+        }
+    }
+</nav>

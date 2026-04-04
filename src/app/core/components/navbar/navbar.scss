@@ -1,0 +1,65 @@
+$red-hat-text: "Red Hat Text", sans-serif;
+$red-hat-display: "Red Hat Display", sans-serif;
+
+
+$font-14: 14px;
+
+$font-semibold: 600;
+
+.font-hat-text { font-family: $red-hat-text; }
+
+.font-hat-display { font-family: $red-hat-display; }
+.font-14 { font-size: $font-14; }
+
+.font-semibold { font-weight: $font-semibold; }
+
+
+
+
+
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #ff5722
+    ;
+
+    &__items {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__button {
+        cursor: pointer;
+    }
+
+    &__menu-button {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__menu-icon {
+        height: 2px;
+        border-radius: 100%;
+        width: 1rem;
+        background-color: black;
+        font-family: "Red Hat Text", sans-serif;
+    }
+
+    &__menu-list {
+        position: absolute;
+        background-color: #ff5722;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__hidden {
+        display: none;
+    }
+}
