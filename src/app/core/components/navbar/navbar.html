@@ -1,16 +1,18 @@
 <nav class="nav">
-    <img class="nav__logo" src="" alt="">
+    <div class="nav__container-logo">
+        <img class="nav__logo" src="logo-juninho.jpeg" alt="logo">
+    </div>
     @if (!isMobile) {
         <div class="nav__items">
-            <button class="nav__scrollButton" (click)="scrollTo('home')">Home</button>
-            <button class="nav__scrollButton" (click)="scrollTo('about')">Sobre nós</button>
-            <button class="nav__scrollButton" (click)="scrollTo('contact')">Contato</button>
+            <button class="nav__scroll-button" (click)="scrollTo('home')">Home</button>
+            <button class="nav__scroll-button" (click)="scrollTo('about')">Sobre nós</button>
+            <button class="nav__scroll-button" (click)="scrollTo('contact')">Contato</button>
         </div>
     } @else {
         <div class="nav__menu-button" (click)="openMenu()" [class.nav__hidden]="isMenuOpen">
             <span class="nav__menu-icon"></span>
-            <span class="nav__menuIcon"></span>
-            <span class="nav__menuIcon"></span>
+            <span class="nav__menu-icon"></span>
+            <span class="nav__menu-icon"></span>
         </div>
 
         @if (isMenuOpen) {
