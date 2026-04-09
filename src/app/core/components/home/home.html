@@ -1,32 +1,30 @@
-<app-navbar (scrollToSection)="scrollToSection($event)"></app-navbar>
+<app-navbar class="fixed w-full" (scrollToSection)="scrollToSection($event)"></app-navbar>
 
 <main class="home">
-    <div class="home__bg"></div>
-    <section id="home" class="home__section">
-        <div class="home__container">
-            <div class="home__content-title">
-                <div class="home__container-title pt-8">
+    <div class="home__bg bg-cover bg-no-repeat bg-center p-4 bg-fixed fixed top-0 left-0 w-full h-screen -z-10"></div>
+    <section id="home" class="home__section pt-28 px-4 pb-4 tablet:flex tablet:justify-center">
+        <div class="home__container flex flex-col h-fit p-4 rounded-2xl">
+            <div class="home__content-title flex flex-col h-full pl-2 pt-4 gap-4">
+                <div class="home__container-title pt-8 flex flex-col gap-2">
                     <span class="home__title font-bebas">
                         Lavagem profissional, detalhamento e cuidado completo para o seu veículo em Ribeirão Preto.
                     </span>
-                    <span class="home__subtitle font-bebas">
+                    <span class="home__subtitle font-bebas text-base">
                         Na Garagem do Juninho, cuidamos do seu carro como se fosse nosso. Trabalhamos com produtos de
                         alta
                         qualidade e atenção aos mínimos detalhes para garantir um resultado impecável.
                     </span>
                 </div>
-                <div class="home__benefits">
+                <div class="home__benefits flex flex-col self-center gap-2 tablet:self-start tablet:pl-12">
                     @for (benefit of benefits; track $index) {
                     <div>
                         <span class="home__benefit font-bebas">{{benefit.title}}</span>
                         <ul>
-                            <li class="home__benefit-list font-bebas">{{benefit.subtitle}}</li>
+                            <li class="home__benefit-list font-bebas list-disc">{{benefit.subtitle}}</li>
                         </ul>
                     </div>
                     }
                 </div>
-
-
             </div>
         </div>
     </section>
