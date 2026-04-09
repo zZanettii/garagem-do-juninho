@@ -1,3 +1,117 @@
-section {
-    padding-top: 50rem;
+@use 'variables' as *;
+
+.home {
+  &__bg {
+    background-image: url('/car-wash3.avif');
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,0.8) 40%,
+     
+    );
+  
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,0.8) 40%,
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1rem;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;  
+    z-index: -1;
+  }
+  
+
+  &__section{
+    padding: 7rem 1rem 1rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #0f0e0e 0%, #0f0e0e 30%, #ff5722 );
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 1.25rem;
+  }
+
+  &__content-title {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 0.5rem;
+    padding-top: 1rem;
+    gap: 1rem;
+  }
+
+  &__container-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    color: aliceblue;
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  &__subtitle {
+    color: aliceblue;
+    font-size: 16px;
+  }
+
+  &__benefits {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 0.5rem;
+  }
+
+  &__benefit {
+    color: aliceblue;
+  }
+
+  &__benefit-list {
+    color: aliceblue;
+    list-style: disc;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__section {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__container {
+      width: 600px;
+    }
+
+    &__benefits {
+      align-self: self-start;
+      padding-left: 3rem;
+    }
+  }
+}
+
+app-navbar {
+  position: fixed;
+  width: 100%;
+}
+
+.about{
+  background-color: aliceblue;
+  margin-top:30rem;
+}
+
+.contact {
+  background-color: aliceblue;
+  margin-top:30rem;
 }

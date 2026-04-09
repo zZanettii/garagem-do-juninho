@@ -1,21 +1,46 @@
 <app-navbar (scrollToSection)="scrollToSection($event)"></app-navbar>
 
+<main class="home">
+    <div class="home__bg"></div>
+    <section id="home" class="home__section">
+        <div class="home__container">
+            <div class="home__content-title">
+                <div class="home__container-title pt-8">
+                    <span class="home__title font-bebas">
+                        Lavagem profissional, detalhamento e cuidado completo para o seu veículo em Ribeirão Preto.
+                    </span>
+                    <span class="home__subtitle font-bebas">
+                        Na Garagem do Juninho, cuidamos do seu carro como se fosse nosso. Trabalhamos com produtos de
+                        alta
+                        qualidade e atenção aos mínimos detalhes para garantir um resultado impecável.
+                    </span>
+                </div>
+                <div class="home__benefits">
+                    @for (benefit of benefits; track $index) {
+                    <div>
+                        <span class="home__benefit font-bebas">{{benefit.title}}</span>
+                        <ul>
+                            <li class="home__benefit-list font-bebas">{{benefit.subtitle}}</li>
+                        </ul>
+                    </div>
+                    }
+                </div>
 
-<section id="home">
-    <div class="">
-        HOME
-    </div>
-</section>
 
-<section id="about">
-    <div class="">
-        ABOUT
-    </div>
-</section>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about">
+            ABOUT
+        </div>
+    </section>
 
 
-<section id="contact">
-    <div class="">
-        CONTACT
-    </div>
-</section>
+    <section id="contact">
+        <div class="contact">
+            CONTACT
+        </div>
+    </section>
+</main>

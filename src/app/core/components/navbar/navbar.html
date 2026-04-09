@@ -3,26 +3,19 @@
         <img class="nav__logo" src="logo-juninho.jpeg" alt="logo">
     </div>
     @if (!isMobile) {
-        <div class="nav__items">
-            <button class="nav__scroll-button" (click)="scrollTo('home')">Home</button>
-            <button class="nav__scroll-button" (click)="scrollTo('about')">Sobre nós</button>
-            <button class="nav__scroll-button" (click)="scrollTo('contact')">Contato</button>
-        </div>
-    } @else {
-        <div class="nav__menu-button" (click)="openMenu()" [class.nav__hidden]="isMenuOpen">
-            <span class="nav__menu-icon"></span>
-            <span class="nav__menu-icon"></span>
-            <span class="nav__menu-icon"></span>
-        </div>
-
-        @if (isMenuOpen) {
-            <ng-container>
-                <div class="nav__menu-list">
-                    @for (section of menuItems; track $index) {
-                        <button class="nav__menu-item font-hat-text font-14 font-semibold" (click)="scrollTo(section.value); openMenu()">{{ section.label }}</button>
-                    }
-                </div>
-            </ng-container>
+    <div class="nav__items">
+        @for (section of menuItems; track $index) {
+        <button class="nav__scroll-button"
+            (click)="scrollTo(section.value)">{{section.label}}</button>
         }
+    </div>
+    } @else {
+    <button mat-button [matMenuTriggerFor]="menu" class="nav__container-menu"><mat-icon
+            class="nav__menu">menu</mat-icon></button>
+    <mat-menu #menu class="matMenu">
+        @for (section of menuItems; track $index) {
+        <button mat-menu-item (click)="scrollTo(section.value, menu)">{{section.label}}</button>
+        }
+    </mat-menu>
     }
 </nav>
