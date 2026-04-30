@@ -20,7 +20,7 @@
   &__container {
     background: linear-gradient(180deg, #0f0e0e 0%, #0f0e0e 30%, #ff5722 );
     width: 100%;
-    max-width: 600px;
+    max-width: 345px;
   }
 
   &__title {
@@ -39,6 +39,29 @@
 
   &__benefit-list {
     color: aliceblue;
+  }
+
+  &__budget-button {
+    width: 185px;
+  }
+
+  &__budget-icon {
+    clip-path: inset(19%);
+  }
+
+  @media screen and (min-width: 1024px) {
+    .home {
+      &__container {
+        max-width: 600px;
+      }
+    }
+  }
+}
+
+.whoWeAre {
+  &__glass-card {
+    border: 1px solid rgba(255, 106, 44, 0.3);
+    box-shadow: 0 0 30px rgba(255, 106, 44, 0.25);
   }
 }
 
