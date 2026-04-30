@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+.nav {
+  background-color: #ff5722;
+
+  &__container-menu:hover {
+    background-color: #0f0e0e;
+  }
+
+  &__container-menu {
+    justify-content: right;
+  }
+
+  &__menu {
+    color: black;
+  }
+
+  &__container-menu:hover .nav__menu {
+    color: #ff5722;
+  }
+
+  &__scroll-button {
+    font-family: $bebas-neue;
+  }
+}

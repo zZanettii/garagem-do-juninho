@@ -1,0 +1,20 @@
+<nav class="nav w-full flex justify-between p-2 items-center">
+    <div class="nav__container-logo w-32 h-20 tablet:w-40 tablet:pl-8">
+        <img class="nav__logo rounded-full w-full h-20" src="logo-juninho.jpeg" alt="logo">
+    </div>
+    @if (!isMobile) {
+    <div class="nav__items flex gap-16 pr-16">
+        @for (section of menuItems; track $index) {
+        <button class="nav__scroll-button cursor-pointer" (click)="scrollTo(section.value)">{{section.label}}</button>
+        }
+    </div>
+    } @else {
+    <button mat-button [matMenuTriggerFor]="menu" class="nav__container-menu"><mat-icon
+            class="nav__menu text-black m-0">menu</mat-icon></button>
+    <mat-menu #menu class="matMenu">
+        @for (section of menuItems; track $index) {
+        <button mat-menu-item (click)="scrollTo(section.value, menu)">{{section.label}}</button>
+        }
+    </mat-menu>
+    }
+</nav>

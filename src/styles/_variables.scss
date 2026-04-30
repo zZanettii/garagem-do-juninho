@@ -1,0 +1,27 @@
+$red-hat-text: 'Red Hat Text', 'sans-serif';
+$red-hat-display: 'Red Hat Display', 'sans-serif';
+$bebas-neue: 'Bebas Neue', 'sans-serif';
+
+$font-14: 14px;
+
+$font-semibold: 600;
+
+.font-hat-text {
+  font-family: $red-hat-text;
+}
+
+.font-hat-display {
+  font-family: $red-hat-display;
+}
+
+.font-bebas {
+    font-family: $bebas-neue;
+}
+
+.font-14 {
+  font-size: $font-14;
+}
+
+.font-semibold {
+  font-weight: $font-semibold;
+}
