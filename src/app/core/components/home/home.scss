@@ -1,0 +1,76 @@
+@use 'variables' as *;
+
+.home {
+  &__bg {
+    background-image: url('/car-wash3.avif');
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,0.8) 40%,
+     
+    );
+  
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,0.8) 40%,
+    );
+  }
+  
+  &__container {
+    background: linear-gradient(180deg, #0f0e0e 0%, #0f0e0e 30%, #ff5722 );
+    width: 100%;
+    max-width: 345px;
+  }
+
+  &__title {
+    color: aliceblue;
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  &__subtitle {
+    color: aliceblue;
+  }
+
+  &__benefit {
+    color: aliceblue;
+  }
+
+  &__benefit-list {
+    color: aliceblue;
+  }
+
+  &__budget-button {
+    width: 185px;
+  }
+
+  &__budget-icon {
+    clip-path: inset(19%);
+  }
+
+  @media screen and (min-width: 1024px) {
+    .home {
+      &__container {
+        max-width: 600px;
+      }
+    }
+  }
+}
+
+.whoWeAre {
+  &__glass-card {
+    border: 1px solid rgba(255, 106, 44, 0.3);
+    box-shadow: 0 0 30px rgba(255, 106, 44, 0.25);
+  }
+}
+
+.about{
+  background-color: aliceblue;
+  margin-top:30rem;
+}
+
+.contact {
+  background-color: aliceblue;
+  margin-top:30rem;
+}
