@@ -1,0 +1,29 @@
+{
+    "ourServices": [
+        {
+            "image": "assets/images/car-wash.jpg",
+            "icon": "car",
+            "title": "Lavagem simples",
+            "description": "Limpeza externa completa com acabamento impecável"
+        },
+        {
+            "image": "assets/images/car-wash.jpg",
+            "icon": "bubbles",
+            "title": "Lavagem complete",
+            "description": "Interna e externa com cuidado detalhado"
+        },
+        {
+            "image": "assets/images/car-wash.jpg",
+            "icon": "sparkles",
+            "title": "Higienização interna",
+            "description": "Bancos, teto, painel e remoção de odores"
+        },
+        {
+            "image": "assets/images/car-wash.jpg",
+            "icon": "shield",
+            "title": "Higienização bancos",
+            "description": "Higienização profunda de banco, remoção de fungos e ácaros"
+        }
+
+    ]
+}

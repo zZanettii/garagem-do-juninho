@@ -1,0 +1,33 @@
+<section class="ourServices flex flex-col justify-center w-full items-center p-4 gap-4 desktop:p-8">
+    <h2 class="uppercase text-white font-bebas text-4xl">Nossos serviços</h2>
+
+    <div class=" flex justify-center items-center gap-8">
+        @for (ourService of ourServices; track $index) {
+
+        @if (!isMobile) {
+        <div class="ourServices__card relative bg-orange rounded-3xl w-1/6 h-80 flex gap-10 flex-col justify-start items-center">
+            <div
+              class="ourServices__cardImage rounded-t-3xl w-full"
+              [style.background-image]="'url(' + ourService.image + ')'"
+            >
+            </div>
+
+            <div class="ourServices__cardIcon absolute p-3 rounded-full w-fit">
+                <lucide-icon
+                    [img]="iconMap[ourService.icon]"
+                    class="text-orange"
+                    [size]="20"
+                    [strokeWidth]="2"
+                ></lucide-icon>
+            </div>
+
+            <div class="flex flex-col text-center px-4">
+                <span class="text-white font-bebas text-base">{{ ourService.title }}</span>
+                <span class="text-white text-center">{{ ourService.description }}</span>
+            </div>
+        </div>
+        }
+        }
+    </div>
+
+</section>
