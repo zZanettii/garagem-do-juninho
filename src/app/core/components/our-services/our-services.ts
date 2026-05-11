@@ -45,6 +45,8 @@ export class OurServices {
 
   readonly flickingProgress = signal(0);
 
+  readonly activeFlickingIndex = signal(this.flickingOptions.defaultIndex ?? 0);
+
   isMobile = signal(false);
   ourServices = toSignal(this.service.getOurServices(), { initialValue: [] as OurJobs[] });
 
@@ -57,6 +59,7 @@ export class OurServices {
   }
 
   onFlickingReady(event: ReadyEvent<NgxFlickingComponent>) {
+    this.activeFlickingIndex.set(event.currentTarget.index);
     this.syncProgressFromFlicking(event.currentTarget);
   }
 
@@ -65,6 +68,7 @@ export class OurServices {
   }
 
   onFlickingChanged(event: ChangedEvent<NgxFlickingComponent>) {
+    this.activeFlickingIndex.set(event.index);
     this.syncProgressFromFlicking(event.currentTarget);
   }
 
