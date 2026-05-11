@@ -2,9 +2,9 @@
     <h2 class="uppercase text-white font-bebas text-4xl">Nossos serviços</h2>
 
     <div class=" flex justify-center items-center gap-8">
-        @for (ourService of ourServices; track $index) {
+        @for (ourService of ourServices(); track ourService.title) {
 
-        @if (!isMobile) {
+        @if (!isMobile()) {
         <div class="ourServices__card relative bg-orange rounded-3xl w-1/6 h-80 flex gap-10 flex-col justify-start items-center">
             <div
               class="ourServices__cardImage rounded-t-3xl w-full"

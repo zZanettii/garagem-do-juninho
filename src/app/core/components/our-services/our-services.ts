@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
-import { ServiceData } from '../../services/service-data/service-data.service';
 import { CommonModule } from '@angular/common';
+import { Component, inject, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { Bubbles, CarFront, LucideAngularModule, LucideIconData, ShieldCheck, Sparkles } from 'lucide-angular';
+import { ServiceData } from '../../services/service-data/service-data.service';
 
 export interface OurJobs {
   image: string;
@@ -17,7 +18,7 @@ export interface OurJobs {
   styleUrl: './our-services.scss',
 })
 export class OurServices {
-  private service = inject(ServiceData);
+  private readonly service = inject(ServiceData);
   readonly iconMap: Record<string, LucideIconData> = {
     bubbles: Bubbles,
     sparkles: Sparkles,
@@ -25,11 +26,14 @@ export class OurServices {
     car: CarFront,
   };
 
-  isMobile: boolean = false;
-  ourServices: OurJobs[] = [];
+  isMobile = signal(false);
+  ourServices = toSignal(this.service.getOurServices(), {initialValue: [] as OurJobs[]})
 
   ngOnInit() {
-    this.isMobile = window.innerWidth < 1024 ? true : false;
-    this.service.getOurServices().subscribe((data) => this.ourServices = data);
+    this.getIsMobile();
+  }
+
+  getIsMobile() {
+    this.isMobile.set(window.innerWidth < 1024 ? true : false);
   }
 }
