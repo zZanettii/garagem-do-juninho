@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+.after-before {
+    &__container{
+        border: 1px solid rgba(255, 106, 44, 0.3);
+        box-shadow: 0 0 30px rgba(219, 173, 153, 0.25)
+    }
+}

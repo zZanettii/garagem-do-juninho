@@ -1,7 +1,7 @@
 <section class="ourServices flex flex-col justify-center w-full items-center p-4 gap-4 desktop:p-8">
     <h2 class="uppercase text-white font-bebas text-4xl">Nossos serviços</h2>
 
-    <div class="flex justify-center items-center gap-8 flex-wrap w-full flex-col desktop:flex-row">
+    <div class="flex justify-center items-center gap-4 flex-wrap w-full flex-col desktop:flex-row">
         @if (!isMobile()) {
         @for (ourService of ourServices(); track ourService.title) {
         <div
