@@ -1,17 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import {
-  ChangedEvent,
-  FlickingOptions,
-  MoveEvent,
-  Plugin,
-  ReadyEvent,
-} from '@egjs/flicking';
+import { ChangedEvent, FlickingOptions, MoveEvent, Plugin, ReadyEvent } from '@egjs/flicking';
 import { AutoPlay } from '@egjs/flicking-plugins';
 import { NgxFlickingComponent, NgxFlickingModule } from '@egjs/ngx-flicking';
-import { Bubbles, CarFront, LucideAngularModule, LucideIconData, ShieldCheck, Sparkles } from 'lucide-angular';
+import {
+  Bubbles,
+  CarFront,
+  LucideAngularModule,
+  LucideIconData,
+  ShieldCheck,
+  Sparkles,
+} from 'lucide-angular';
 import { ServiceData } from '../../services/service-data/service-data.service';
+import { ResponsiveService } from '../../services/responsive/responsive-service';
 
 export interface OurJobs {
   image: string;
@@ -28,6 +30,8 @@ export interface OurJobs {
 })
 export class OurServices {
   private readonly service = inject(ServiceData);
+  readonly isMobile = inject(ResponsiveService);
+
   readonly iconMap: Record<string, LucideIconData> = {
     bubbles: Bubbles,
     sparkles: Sparkles,
@@ -45,18 +49,12 @@ export class OurServices {
 
   readonly flickingProgress = signal(0);
 
-  isMobile = signal(false);
+  readonly activeFlickingIndex = signal(this.flickingOptions.defaultIndex ?? 0);
+
   ourServices = toSignal(this.service.getOurServices(), { initialValue: [] as OurJobs[] });
 
-  ngOnInit() {
-    this.getIsMobile();
-  }
-
-  getIsMobile() {
-    this.isMobile.set(window.innerWidth < 1024);
-  }
-
   onFlickingReady(event: ReadyEvent<NgxFlickingComponent>) {
+    this.activeFlickingIndex.set(event.currentTarget.index);
     this.syncProgressFromFlicking(event.currentTarget);
   }
 
@@ -65,6 +63,7 @@ export class OurServices {
   }
 
   onFlickingChanged(event: ChangedEvent<NgxFlickingComponent>) {
+    this.activeFlickingIndex.set(event.index);
     this.syncProgressFromFlicking(event.currentTarget);
   }
 

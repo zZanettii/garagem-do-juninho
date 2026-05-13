@@ -24,6 +24,16 @@
             "title": "Higienização bancos",
             "description": "Higienização profunda de banco, remoção de fungos e ácaros"
         }
-
+    ],
+    "afterBeforeItems": [
+        {
+            "image": "assets/images/carro1.png"
+        },
+        {
+            "image": "assets/images/carro2.png"
+        },
+        {
+            "image": "assets/images/motor1.png"
+        }
     ]
 }
