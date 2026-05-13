@@ -1,8 +1,36 @@
-<section class="after-before flex flex-col justify-center items-center pt-4 w-full">
+<section class="after-before flex flex-col justify-center items-center pt-4 px-2 w-full">
     <h2 class="uppercase text-white font-bebas text-3xl">Antes e Depois</h2>
-    <div class="after-before__container flex justify-center items-center bg-black/70 backdrop-blur-md rounded-2xl mx-auto max-w-4xl">
-        <div>
+    @if (!isMobile.isMobile()) {
+    <div
+        class="after-before__container flex flex-col gap-10 desktop:flex-row py-4 px-6 justify-center w-fit h-fit items-center bg-black/70 backdrop-blur-md rounded-2xl mx-auto">
+        @for (afterBefore of afterBeforeItems(); track $index) {
+        <div class="after-before__cardImage flex flex-col">
+            <img class="after-before__image" [src]="afterBefore.image" alt="">
+            <div class="flex justify-around">
+                <span class="text-white font-bebas text-xl text-orange">{{afterBeforeEnum.before}}</span>
+                <span class="text-white font-bebas text-xl text-orange">{{afterBeforeEnum.after}}</span>
+            </div>
         </div>
+        }
+
     </div>
+    }@else {
+    <div
+        class="after-before__container flex flex-col gap-10 desktop:flex-row py-4 px-6 justify-center w-full h-fit items-center bg-black/70 backdrop-blur-md rounded-2xl mx-auto">
+        <ngx-flicking class="flicking flicking0 mx-3" [options]="flickingOptions" [plugins]="flickingPlugins">
+            @for (afterBefore of afterBeforeItems(); track $index) {
+            <div flicking-panel class="after-before__cardImage flex flex-col">
+                <img class="after-before__image" [src]="afterBefore.image" alt="">
+                <div class="flex justify-around">
+                    <span class="text-white font-bebas text-xl text-orange">{{afterBeforeEnum.before}}</span>
+                    <span class="text-white font-bebas text-xl text-orange">{{afterBeforeEnum.after}}</span>
+                </div>
+            </div>
+            }
+        </ngx-flicking>
+
+    </div>
+    }
+
 
 </section>

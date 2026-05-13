@@ -2,7 +2,7 @@
     <h2 class="uppercase text-white font-bebas text-4xl">Nossos serviços</h2>
 
     <div class="flex justify-center items-center gap-4 flex-wrap w-full flex-col desktop:flex-row">
-        @if (!isMobile()) {
+        @if (!isMobile.isMobile()) {
         @for (ourService of ourServices(); track ourService.title) {
         <div
             class="ourServices__card relative bg-orange rounded-3xl w-1/6 h-80 flex gap-10 flex-col justify-start items-center">
@@ -22,32 +22,32 @@
         </div>
         }
         } @else {
-            <ngx-flicking class="flicking flicking0 gap-4 w-full max-w-md" [options]="flickingOptions"
-                [plugins]="flickingPlugins" (ready)="onFlickingReady($event)" (move)="onMove($event)"
-                (changed)="onFlickingChanged($event)">
-                @for (ourService of ourServices(); track ourService.title; let i = $index) {
-                <div flicking-panel
-                    class="ourServices__card ourServices__card--flicking relative bg-orange rounded-3xl h-80 flex gap-10 flex-col justify-start items-center"
-                    [class.ourServices__card--flicking-active]="i === activeFlickingIndex()">
-                    <div class="ourServices__cardImage rounded-t-3xl w-full"
-                        [style.background-image]="'url(' + ourService.image + ')'">
-                    </div>
-
-                    <div class="ourServices__cardIcon absolute p-3 rounded-full w-fit">
-                        <lucide-icon [img]="iconMap[ourService.icon]" class="text-orange" [size]="20"
-                            [strokeWidth]="2"></lucide-icon>
-                    </div>
-
-                    <div class="flex flex-col text-center px-4">
-                        <span class="text-white font-bebas text-base">{{ ourService.title }}</span>
-                        <span class="text-white text-center">{{ ourService.description }}</span>
-                    </div>
+        <ngx-flicking class="flicking flicking0 gap-4 w-full max-w-md" [options]="flickingOptions"
+            [plugins]="flickingPlugins" (ready)="onFlickingReady($event)" (move)="onMove($event)"
+            (changed)="onFlickingChanged($event)">
+            @for (ourService of ourServices(); track ourService.title; let i = $index) {
+            <div flicking-panel
+                class="ourServices__card ourServices__card--flicking relative bg-orange rounded-3xl h-80 flex gap-10 flex-col justify-start items-center"
+                [class.ourServices__card--flicking-active]="i === activeFlickingIndex()">
+                <div class="ourServices__cardImage rounded-t-3xl w-full"
+                    [style.background-image]="'url(' + ourService.image + ')'">
                 </div>
-                }
-            </ngx-flicking>
-            <div id="progress" class="progress" aria-hidden="true">
-                <div class="thumb" [style.width.%]="flickingProgress()"></div>
+
+                <div class="ourServices__cardIcon absolute p-3 rounded-full w-fit">
+                    <lucide-icon [img]="iconMap[ourService.icon]" class="text-orange" [size]="20"
+                        [strokeWidth]="2"></lucide-icon>
+                </div>
+
+                <div class="flex flex-col text-center px-4">
+                    <span class="text-white font-bebas text-base">{{ ourService.title }}</span>
+                    <span class="text-white text-center">{{ ourService.description }}</span>
+                </div>
             </div>
+            }
+        </ngx-flicking>
+        <div id="progress" class="progress" aria-hidden="true">
+            <div class="thumb" [style.width.%]="flickingProgress()"></div>
+        </div>
         }
     </div>
 
