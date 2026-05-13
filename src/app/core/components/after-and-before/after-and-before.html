@@ -1,0 +1,42 @@
+<section class="after-before flex flex-col justify-center items-center pt-4 px-2 w-full">
+    <h2 class="uppercase text-white font-bebas text-3xl">Antes e Depois</h2>
+    @if (!isMobile.isMobile()) {
+    <div
+        class="after-before__container flex flex-col gap-10 desktop:flex-row py-4 px-6 justify-center w-fit h-fit items-center bg-black/70 backdrop-blur-md rounded-2xl mx-auto">
+        @for (afterBefore of afterBeforeItems(); track $index) {
+        <div class="after-before__cardImage flex flex-col">
+            <img class="after-before__image" [src]="afterBefore.image" alt="">
+            <div class="flex justify-around">
+                <span class="text-white font-bebas text-xl text-orange">{{afterBeforeEnum.before}}</span>
+                <span class="text-white font-bebas text-xl text-orange">{{afterBeforeEnum.after}}</span>
+            </div>
+        </div>
+        }
+
+    </div>
+    }@else {
+    <div
+        class="after-before__container flex flex-col gap-10 desktop:flex-row py-4 px-6 justify-center w-full h-fit items-center bg-black/70 backdrop-blur-md rounded-2xl mx-auto">
+        @if (afterBeforeItems().length) {
+        <div class="after-before__snapOuter w-full max-w-md mx-auto">
+            <div #strip class="after-before__strip" tabindex="0" role="region"
+                [attr.aria-label]="'Antes e depois, ' + afterBeforeItems().length + ' fotos'">
+                @for (afterBefore of afterBeforeItems(); track $index) {
+                <article class="after-before__slide flex flex-col shrink-0">
+                    <div class="after-before__slideVisual w-full"
+                        [style.background-image]="'url(' + afterBefore.image + ')'"></div>
+                    <div class="flex justify-around pt-2">
+                        <span class="text-white font-bebas text-xl text-orange">{{afterBeforeEnum.before}}</span>
+                        <span class="text-white font-bebas text-xl text-orange">{{afterBeforeEnum.after}}</span>
+                    </div>
+                </article>
+                }
+            </div>
+        </div>
+        }
+
+    </div>
+    }
+
+
+</section>

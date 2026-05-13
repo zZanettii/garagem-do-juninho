@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Navbar } from '../navbar/navbar';
 import { OurServices } from "../our-services/our-services";
+import { AfterAndBefore } from '../after-and-before/after-and-before';
 
 @Component({
   selector: 'app-home',
-  imports: [Navbar, OurServices],
+  imports: [Navbar, OurServices, AfterAndBefore],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
