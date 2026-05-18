@@ -1,7 +1,8 @@
-import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, inject, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
+import { ResponsiveService } from '../../services/responsive/responsive-service';
 
 export enum MenuItems {
   Home = 'Home',
@@ -24,6 +25,8 @@ export interface MenuItem {
   styleUrl: './navbar.scss',
 })
 export class Navbar {
+  public readonly isMobile = inject(ResponsiveService);
+  
   @Output() scrollToSection = new EventEmitter<string>();
 
   @Input() menuItems: MenuItem[] = [
@@ -35,19 +38,9 @@ export class Navbar {
     { label: MenuItems.Contact, value: 'contact' },
   ];
 
-  isMobile: boolean = false;
   isMenuOpen: boolean = false;
 
   constructor() {}
-
-  ngOnInit() {
-    this.isThisMobile();
-  }
-
-  @HostListener('window:resize')
-  public isThisMobile() {
-    this.isMobile = window.innerWidth < 768 ? true : false;
-  }
 
   public scrollTo(section: string, menu?: MatMenu) {
     if (menu) {
