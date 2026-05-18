@@ -1,0 +1,28 @@
+<section class="flex justify-center items-center">
+    <div class="find-us px-4 pt-10 desktop:w-fit">
+        <div
+            class="find-us__container card-box-border flex flex-col-reverse px-4 py-8 desktop:flex-row desktop:justify-between rounded-2xl bg-black/70 backdrop-blur-md gap-10">
+            <div class="find-us__information desktop:pl-4 flex flex-col gap-4">
+                <div class="border-orange-600 border-b-4 w-fit">
+                    <h2 class="find-us__title uppercase text-white font-bebas text-4xl">Onde estamos</h2>
+                </div>
+    
+                <div class="find-us__information-address flex flex-col gap-2 justify-center desktop:justify-start">
+                    <span class="text-white flex gap-1 items-center"><lucide-icon name="map-pin" class="text-orange"></lucide-icon> Ribeirao
+                        Preto - SP</span>
+                    <span class="text-white">Rua Isaías José Ferreira, 1352 - Residencial Palmares</span>
+                    <span class="text-white">CEP: 14092-453</span>
+    
+                    <button class="find-us__see-on-map border-orange-600 border text-white w-fit font-bebas text-xl flex items-center gap-2 rounded-lg py-1 px-4"
+                    (click)="openMap()">Ver no mapa <lucide-icon name="map" class="text-white"></lucide-icon></button>
+                </div>
+    
+            </div>
+    
+            <div class="find-us__map desktop:pr-4">
+                <iframe class="find-us__map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.438348985623!2d-47.769247723853596!3d-21.174738678275727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9bf60fb9e268d%3A0xfa2a8ba2c7183b58!2sRua%20Isa%C3%ADas%20Jos%C3%A9%20Ferreira%2C%201352%20-%20Res.%20e%20Comercial%20Palmares%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014092-453!5e0!3m2!1spt-BR!2sbr!4v1779123932536!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+    
+        </div>
+    </div>
+</section>

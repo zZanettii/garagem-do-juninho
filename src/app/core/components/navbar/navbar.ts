@@ -6,6 +6,9 @@ import { MatMenu, MatMenuModule } from '@angular/material/menu';
 export enum MenuItems {
   Home = 'Home',
   About = 'Sobre nós',
+  Services = 'Serviços',
+  AfterAndBefore = 'Antes e depois',
+  FindUs = 'Onde estamos',
   Contact = 'Contato',
 }
 
@@ -26,6 +29,9 @@ export class Navbar {
   @Input() menuItems: MenuItem[] = [
     { label: MenuItems.Home, value: 'home' },
     { label: MenuItems.About, value: 'about' },
+    { label: MenuItems.Services, value: 'services' },
+    { label: MenuItems.AfterAndBefore, value: 'after-and-before' },
+    { label: MenuItems.FindUs, value: 'find-us' },
     { label: MenuItems.Contact, value: 'contact' },
   ];
 
