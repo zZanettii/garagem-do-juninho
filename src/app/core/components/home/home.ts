@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { Navbar } from '../navbar/navbar';
-import { OurServices } from "../our-services/our-services";
 import { AfterAndBefore } from '../after-and-before/after-and-before';
 import { FindUs } from '../find-us/find-us';
-import { LucideAngularModule } from 'lucide-angular';
+import { Navbar } from '../navbar/navbar';
+import { OurServices } from '../our-services/our-services';
 
 @Component({
   selector: 'app-home',
-  imports: [Navbar, OurServices, AfterAndBefore, FindUs, LucideAngularModule],
+  imports: [Navbar, OurServices, AfterAndBefore, FindUs],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -27,7 +26,5 @@ export class HomeComponent {
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  budgetWpp(){
-    
-  }
+  budgetWpp() {}
 }
