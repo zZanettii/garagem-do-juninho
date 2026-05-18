@@ -15,7 +15,7 @@ $font-semibold: 600;
 }
 
 .font-bebas {
-    font-family: $bebas-neue;
+  font-family: $bebas-neue;
 }
 
 .font-14 {
@@ -32,4 +32,9 @@ $font-semibold: 600;
 
 .text-orange {
   color: #ff5722;
+}
+
+.card-box-border {
+  border: 1px solid rgba(255, 106, 44, 0.3);
+  box-shadow: 0 0 30px rgba(255, 106, 44, 0.25);
 }

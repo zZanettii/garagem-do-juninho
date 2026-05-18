@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.find-us {
+  &__map-iframe {
+    height: 250px;
+    width: 300px;
+    border-radius: 1rem;
+  }
+
+  @media screen and (min-width: 1025px) {
+    &__container {
+        width: 1030px;
+    }
+    
+    &__map-iframe {
+      width: 600px;
+    }
+  }
+}

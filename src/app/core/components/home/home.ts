@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { Navbar } from '../navbar/navbar';
 import { OurServices } from "../our-services/our-services";
 import { AfterAndBefore } from '../after-and-before/after-and-before';
+import { FindUs } from '../find-us/find-us';
+import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-home',
-  imports: [Navbar, OurServices, AfterAndBefore],
+  imports: [Navbar, OurServices, AfterAndBefore, FindUs, LucideAngularModule],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
