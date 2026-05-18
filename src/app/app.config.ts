@@ -3,13 +3,13 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { LucideAngularModule, ShieldCheck, Bubbles, Sparkle, CarFront   } from 'lucide-angular';
+import { LucideAngularModule, ShieldCheck, Bubbles, Sparkle, CarFront, Map, MapPin  } from 'lucide-angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(withFetch()),
     provideRouter(routes),
-    importProvidersFrom(LucideAngularModule.pick({ ShieldCheck, Bubbles, Sparkle, CarFront }))
+    importProvidersFrom(LucideAngularModule.pick({ ShieldCheck, Bubbles, Sparkle, CarFront, Map, MapPin }))
   ]
 };
