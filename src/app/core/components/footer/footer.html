@@ -1,0 +1,32 @@
+<footer class="footer flex flex-col bg-black/70 backdrop-blur-md items-center justify-center gap-3 w-full p-4 text-center">
+    <div class="flex desktop:flex-row flex-col items-center justify-center gap-2">
+        <p class="footer__copyright text-white/90 text-sm">
+            © {{ year }} Garagem do Juninho
+        </p>
+        <p class="footer__copyright text-white/90 text-sm flex items-center justify-center gap-2"><span class="hidden desktop:block">-</span>Todos os direitos reservados</p>
+    </div>
+
+    <p class="footer__credits text-white/70 text-sm flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+        <span>Desenvolvido por {{ developer.name }}</span>
+        <span class="footer__separator" aria-hidden="true">•</span>
+        <a
+            class="footer__link inline-flex items-center gap-1"
+            [href]="developer.github"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub de {{ developer.name }}">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            GitHub
+        </a>
+        <span class="footer__separator" aria-hidden="true">•</span>
+        <a
+            class="footer__link inline-flex items-center gap-1"
+            [href]="developer.linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn de {{ developer.name }}">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            LinkedIn
+        </a>
+    </p>
+</footer>

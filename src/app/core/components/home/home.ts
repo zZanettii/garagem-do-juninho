@@ -4,12 +4,13 @@ import { ReviewsFan } from '../reviews-fan/reviews-fan';
 import { FindUs } from '../find-us/find-us';
 import { Navbar } from '../navbar/navbar';
 import { OurServices } from '../our-services/our-services';
-import { ContactUs } from "../contact-us/contact-us";
+import { ContactUs } from '../contact-us/contact-us';
+import { Footer } from '../footer/footer';
 import { WppService } from '../../services/wpp-service/wpp-service';
 
 @Component({
   selector: 'app-home',
-  imports: [Navbar, OurServices, AfterAndBefore, ReviewsFan, FindUs, ContactUs],
+  imports: [Navbar, OurServices, AfterAndBefore, ReviewsFan, FindUs, ContactUs, Footer],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

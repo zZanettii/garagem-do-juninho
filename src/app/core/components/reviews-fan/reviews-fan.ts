@@ -46,7 +46,7 @@ export class ReviewsFan {
   }
 
   hasSelection(): boolean {
-    return this.selectedId() !== null;
+    return this.selectedId() !== null ? true : false;
   }
 
   cardTransform(index: number): string {
