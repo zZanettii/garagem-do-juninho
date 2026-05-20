@@ -1,25 +1,25 @@
 {
     "ourServices": [
         {
-            "image": "assets/images/car-wash.jpg",
+            "image": "assets/images/our-services-simples2.jpeg",
             "icon": "car",
             "title": "Lavagem simples",
             "description": "Limpeza externa completa com acabamento impecável"
         },
         {
-            "image": "assets/images/car-wash.jpg",
+            "image": "assets/images/our-services-completa.jpeg",
             "icon": "bubbles",
-            "title": "Lavagem complete",
+            "title": "Lavagem completa",
             "description": "Interna e externa com cuidado detalhado"
         },
         {
-            "image": "assets/images/car-wash.jpg",
+            "image": "assets/images/our-services-interna.jpeg",
             "icon": "sparkles",
             "title": "Higienização interna",
             "description": "Bancos, teto, painel e remoção de odores"
         },
         {
-            "image": "assets/images/car-wash.jpg",
+            "image": "assets/images/our-services-banco.jpeg",
             "icon": "shield",
             "title": "Higienização bancos",
             "description": "Higienização profunda de banco, remoção de fungos e ácaros"
@@ -35,5 +35,14 @@
         {
             "image": "assets/images/motor1.png"
         }
+    ],
+    "reviews": [
+        { "id": 1, "image": "assets/images/review1.jpeg", "alt": "Depoimento de cliente — Instagram" },
+        { "id": 2, "image": "assets/images/review2.jpeg", "alt": "Depoimento de cliente — Instagram" },
+        { "id": 3, "image": "assets/images/review3.jpeg", "alt": "Depoimento de cliente — WhatsApp" },
+        { "id": 4, "image": "assets/images/review4.jpeg", "alt": "Depoimento de cliente — WhatsApp" },
+        { "id": 5, "image": "assets/images/review5.jpeg", "alt": "Depoimento de cliente — Google" },
+        { "id": 6, "image": "assets/images/review6.jpeg", "alt": "Depoimento de cliente — WhatsApp" },
+        { "id": 7, "image": "assets/images/review7.jpeg", "alt": "Depoimento de cliente — WhatsApp" }
     ]
 }
