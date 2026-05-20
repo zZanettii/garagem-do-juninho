@@ -1,0 +1,39 @@
+<section class="contactUs flex flex-col w-full justify-center items-center p-4 gap-4 desktop:p-8">
+    <div
+        class="contactUs__container w-fit card-box-border bg-black/70 backdrop-blur-md rounded-2xl p-4 flex flex-col justify-center items-center gap-4 desktop:gap-16 desktop:flex-row">
+        <div class="flex flex-col gap-2 justify-center items-center desktop:items-start">
+            <h2 class="uppercase text-white font-bebas w-fit text-4xl border-orange-600 border-b-4">Contato</h2>
+            <span class="text-white text-center desktop:text-left">Fale conosco e agende o seu horário! <br>Atendimento
+                rápido e personalizado pelo WhatsApp.</span>
+        </div>
+
+        <div class="flex flex-col gap-2 justify-center items-center desktop:items-start">
+            <button
+                class="contactUs__button flex items-center gap-2 text-white rounded-full justify-center px-1 font-bebas w-fit text-base"
+                (click)="openWhatsapp()">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span class="contactUs__button-text pt-1 font-bebas">(13) 99162-4968</span>
+            </button>
+            <button
+                (click)="openInstagram()"
+                class="contactUs__button flex items-center gap-2 text-white rounded-full justify-center px-1font-bebas w-fit text-base">
+                <i class="fa-brands fa-instagram"></i>
+                <span>@garagemdojuninho</span>
+            </button>
+        </div>
+
+        <div class="contactUs__container-form flex flex-col gap-2 justify-center items-center">
+            <form [formGroup]="form">
+                <input class="contactUs__input" type="text" placeholder="Digite o seu nome..." formControlName="name">
+            </form>
+
+            <button
+                class="contactUs__button contactUs__button-call-wpp flex flex-row-reverse items-center gap-2 bg-orange text-white px-4 py-2 rounded-full justify-center p-1 font-bebas w-fit text-base"
+                (click)="openWhatsapp()">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span class="pt-1">Chamar no whatsapp</span>
+            </button>
+        </div>
+
+    </div>
+</section>

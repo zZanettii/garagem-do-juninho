@@ -27,10 +27,9 @@
                 </div>
                 <div class="flex w-full pt-2 justify-center">
                     <button
-                        class="home__budget-button items-center flex bg-black text-white rounded-full justify-center p-1 font-bebas w-1/3 text-base"
+                        class="home__budget-button items-center flex gap-2 bg-black text-white rounded-full justify-center p-1 font-bebas w-1/3 text-base"
                         (click)="budgetWpp()">
-                        <img class="home__budget-icon bg-white w-6 h-6 rounded-full" src="assets/images/whatsapp-icon.png"
-                            alt="Whatsapp icon">
+                        <i class="fa-brands fa-whatsapp"></i>
                         <span class="pt-1">Solicitar orçamento</span></button>
                 </div>
             </div>
@@ -69,8 +68,8 @@
                 </div>
             </div>
             <div class="w-full">
-                <img src="assets/images/car-wash.jpg" class="rounded-2xl p-2 w-full desktop:hidden" alt="Quem somos image">
-                <img src="assets/images/car-wash3.avif" class="rounded-2xl p-2 w-full h-full hidden desktop:block" alt="Quem somos image">
+                <img src="assets/images/our-services-simples.jpeg" class="rounded-2xl p-2 w-full desktop:hidden" alt="Quem somos image">
+                <img src="assets/images/our-services-simples.jpeg" class="rounded-2xl p-2 w-full h-full hidden desktop:block" alt="Quem somos image">
             </div>
         </div>
     </section>
@@ -83,13 +82,15 @@
         <app-after-and-before></app-after-and-before>
     </section>
 
+    <section id="reviews">
+        <app-reviews-fan></app-reviews-fan>
+    </section>
+
     <section id="find-us">
         <app-find-us></app-find-us>
     </section>
 
     <section id="contact">
-        <div class="contact">
-            CONTACT
-        </div>
+        <app-contact-us></app-contact-us>
     </section>
 </main>

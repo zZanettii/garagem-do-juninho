@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { OurJobs } from '../../components/our-services/our-services';
 import { AfterBeforeItem } from '../../components/after-and-before/after-and-before';
+import { ReviewItem } from '../../components/reviews-fan/reviews-fan';
 
 @Injectable({
   providedIn: 'root',
@@ -23,4 +24,9 @@ export class ServiceData {
       .pipe(map((response) => response.afterBeforeItems));
   }
 
+  getReviews(): Observable<ReviewItem[]> {
+    return this.http
+      .get<{ reviews: ReviewItem[] }>(this.url)
+      .pipe(map((response) => response.reviews));
+  }
 }

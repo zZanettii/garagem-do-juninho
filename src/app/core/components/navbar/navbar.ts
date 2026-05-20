@@ -9,6 +9,7 @@ export enum MenuItems {
   About = 'Sobre nós',
   Services = 'Serviços',
   AfterAndBefore = 'Antes e depois',
+  Reviews = 'Depoimentos',
   FindUs = 'Onde estamos',
   Contact = 'Contato',
 }
@@ -34,6 +35,7 @@ export class Navbar {
     { label: MenuItems.About, value: 'about' },
     { label: MenuItems.Services, value: 'services' },
     { label: MenuItems.AfterAndBefore, value: 'after-and-before' },
+    { label: MenuItems.Reviews, value: 'reviews' },
     { label: MenuItems.FindUs, value: 'find-us' },
     { label: MenuItems.Contact, value: 'contact' },
   ];
