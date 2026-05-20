@@ -18,8 +18,8 @@
                 type="button"
                 role="listitem"
                 class="reviews-fan__card absolute bottom-0 left-1/2 rounded-2xl overflow-hidden border border-orange-600/40 bg-black shadow-lg cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                [style.transform]="cardTransform(i)"
-                [style.zIndex]="cardZIndex(i)"
+                [style.transform]="cardLayouts()[i].transform"
+                [style.zIndex]="cardLayouts()[i].zIndex"
                 [attr.aria-label]="review.alt"
                 (click)="select(i)">
                 <img
@@ -33,12 +33,12 @@
     </div>
 </section>
 
-@if (selectedId() !== null) {
+@if (selectedReview(); as review) {
 <div
     class="reviews-fan__overlay fixed left-0 right-0 bottom-0 top-24 z-[9] flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm"
     role="dialog"
     aria-modal="true"
-    [attr.aria-label]="reviews()[selectedId()!].alt"
+    [attr.aria-label]="review.alt"
     (click)="close()">
     <button
         type="button"
@@ -46,8 +46,8 @@
         (click)="$event.stopPropagation()">
         <img
             class="reviews-fan__image reviews-fan__image--full w-full h-full object-contain pointer-events-none"
-            [src]="reviews()[selectedId()!].image"
-            [alt]="reviews()[selectedId()!].alt" />
+            [src]="review.image"
+            [alt]="review.alt" />
     </button>
 </div>
 }
