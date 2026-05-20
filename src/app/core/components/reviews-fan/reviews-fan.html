@@ -1,0 +1,53 @@
+<section class="reviews-fan relative z-0 isolate flex flex-col items-center justify-center w-full max-w-full overflow-x-hidden px-4 py-8 gap-4 scroll-mt-24">
+    <div class="border-orange-600 border-b-4 w-fit">
+        <h2 class="uppercase text-white font-bebas text-3xl tablet:text-4xl text-center">O que dizem nossos clientes</h2>
+    </div>
+
+    <p class="text-white/80 text-sm text-center max-w-md">
+        Toque em um depoimento para ver o conteúdo completo.
+    </p>
+
+    <div class="reviews-fan__stage relative w-full max-w-lg tablet:max-w-2xl desktop:max-w-4xl mx-auto overflow-hidden">
+        <div
+            class="reviews-fan__deck relative mx-auto"
+            [class.reviews-fan__deck--dimmed]="hasSelection()"
+            role="list"
+            aria-label="Depoimentos de clientes">
+            @for (review of reviews(); track review.id; let i = $index) {
+            <button
+                type="button"
+                role="listitem"
+                class="reviews-fan__card absolute bottom-0 left-1/2 rounded-2xl overflow-hidden border border-orange-600/40 bg-black shadow-lg cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                [style.transform]="cardTransform(i)"
+                [style.zIndex]="cardZIndex(i)"
+                [attr.aria-label]="review.alt"
+                (click)="select(i)">
+                <img
+                    class="reviews-fan__image w-full h-full object-cover object-top pointer-events-none"
+                    [src]="review.image"
+                    [alt]="review.alt"
+                    loading="lazy" />
+            </button>
+            }
+        </div>
+    </div>
+</section>
+
+@if (selectedId() !== null) {
+<div
+    class="reviews-fan__overlay fixed left-0 right-0 bottom-0 top-24 z-[9] flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="reviews()[selectedId()!].alt"
+    (click)="close()">
+    <button
+        type="button"
+        class="reviews-fan__card reviews-fan__card--expanded rounded-2xl overflow-hidden border border-orange-600/50 bg-black shadow-2xl"
+        (click)="$event.stopPropagation()">
+        <img
+            class="reviews-fan__image reviews-fan__image--full w-full h-full object-contain pointer-events-none"
+            [src]="reviews()[selectedId()!].image"
+            [alt]="reviews()[selectedId()!].alt" />
+    </button>
+</div>
+}

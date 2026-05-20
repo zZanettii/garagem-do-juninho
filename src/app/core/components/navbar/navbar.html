@@ -2,7 +2,7 @@
     <div class="nav__container-logo w-32 h-20 tablet:w-40 tablet:pl-8">
         <img class="nav__logo rounded-full w-full h-20" src="logo-juninho.jpeg" alt="logo">
     </div>
-    @if (!isMobile) {
+    @if (!isMobile.isMobile()) {
     <div class="nav__items flex gap-16 pr-16">
         @for (section of menuItems; track $index) {
         <button class="nav__scroll-button cursor-pointer" (click)="scrollTo(section.value)">{{section.label}}</button>
